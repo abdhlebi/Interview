@@ -15,7 +15,8 @@ def test_youtube_search(driver):
     driver.get("https://www.youtube.com")
     time.sleep(5)  # Let the page load
     search_box = driver.find_element(By.XPATH, '//*[@id="center"]/yt-searchbox/div[1]/form/input')
-    search_box.send_keys("SDET Automation Tutorial" + Keys.ENTER)
+    search_box.send_keys("SDET Automation Tutorial")
+    search_box.submit()
 
     time.sleep(5)  # Wait for results
 
