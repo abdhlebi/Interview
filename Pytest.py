@@ -21,3 +21,10 @@ def test_youtube_search(driver):
     time.sleep(5)  # Wait for results
 
     assert "youtube" in driver.title.lower(), "Expected 'youtube' to be in the page title"
+
+# Pytest hook for logging results
+# ------------------------------
+def pytest_runtest_logreport(report):
+    if report.when == "call":  # after test function runs
+        with open("test_results.txt", "a") as f:
+            f.write(f"{report.nodeid} - {report.outcome}\n")
