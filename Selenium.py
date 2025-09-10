@@ -4,8 +4,8 @@ import time
 
 def google_search():
     driver = webdriver.Chrome()
+    driver.maximize_window()
     driver.get("https://www.google.com")
-
     time.sleep(15)  # wait for page to load
 
     # ✅ Use XPath for the search box
@@ -19,6 +19,6 @@ def google_search():
 
     time.sleep(15)  # wait to see the result
 
-    driver.quit()   #both senario the browser will close
+    driver.quit()   #both scenario the browser will close
 
 google_search()

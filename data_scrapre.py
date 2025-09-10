@@ -2,6 +2,11 @@ import time
 import os    #to call the operating system
 import pandas as pd
 
+
+
+data = {'Website': 'OrangeHRM', 'Information': info}
+excel_file = 'output.xlsx'
+
 def write_to_excel(data, excel_file):
     if not os.path.isfile(excel_file):
         # If the file doesn't exist, create a new one with headers
@@ -14,11 +19,8 @@ def write_to_excel(data, excel_file):
         df_combined = pd.concat([df_existing, df_new], ignore_index=True)
         df_combined.to_excel(excel_file, index=False)
 
+write_to_excel()
+
+
 #write_to_excel(data, excel_file)
 
-def write_to_text():
-    with open("newfile.txt", "a") as f:
-        f.write(f"{info}")
-#open and read the file after the appending:
-    with open("newfile.txt") as f:
-    print(f.read())
